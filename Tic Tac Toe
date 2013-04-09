@@ -1,0 +1,526 @@
+import javax.swing.JOptionPane;
+
+
+public class TheGame {
+
+  /**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		boolean invalidMove;
+		boolean playerTurn;
+		boolean compTurn;
+		boolean bPlaying;
+		String answer;
+
+		do{
+
+			invalidMove = true;
+			playerTurn = true;
+			compTurn = false;
+			bPlaying = true;
+					
+		String sBoard = "";
+
+		String Cell1 = "1";
+		String Cell2 = "2";
+		String Cell3 = "3";
+		String Cell4 = "4";
+		String Cell5 = "5";
+		String Cell6 = "6";
+		String Cell7 = "7";
+		String Cell8 = "8";
+		String Cell9 = "9";
+		String playerMove;
+
+
+		int compMove;
+		int turn=0;
+
+
+			do{
+
+			System.out.println(turn);
+			System.out.println(playerTurn + " p initial");//1 of 5
+			System.out.println(compTurn + " c initial");//1 of 5
+			
+			
+
+		sBoard = String.format(Cell1 + " | " + Cell2  + " | " + Cell3 + 
+				"\n---|---|---\n" + 
+				Cell4 + " | " + Cell5 + " | " + Cell6 + 
+				"\n---|---|---\n" + Cell7 + " | " + Cell8 + " | " + Cell9);
+
+		do{
+		playerMove = JOptionPane.showInputDialog(sBoard);
+		
+		System.out.println(playerTurn + " p b4 player turn");
+		System.out.println(compTurn + " c b4 player turn");
+		
+		
+		if(playerTurn == true)
+			
+			{
+
+		if (playerMove.equalsIgnoreCase("1"))
+		{
+			if (! Cell1.equals("1"))
+
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+
+				else
+				{				
+					Cell1 = "X";
+					invalidMove = false;
+					playerTurn = false;
+					compTurn = true;
+				}
+
+		}
+
+		else if (playerMove.equalsIgnoreCase("2"))
+		{
+			if (! Cell2.equalsIgnoreCase("2"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell2 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if (playerMove.equalsIgnoreCase("3"))
+		{
+			if (! Cell3.equalsIgnoreCase("3"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell3 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if (playerMove.equalsIgnoreCase("4"))
+		{
+			if (! Cell4.equalsIgnoreCase("4"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell4 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if (playerMove.equalsIgnoreCase("5"))
+		{
+			if (! Cell5.equalsIgnoreCase("5"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell5 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if (playerMove.equalsIgnoreCase("6"))
+		{
+			if (! Cell6.equalsIgnoreCase("6"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell6 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if (playerMove.equalsIgnoreCase("7"))
+		{
+			if (! Cell7.equalsIgnoreCase("7"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell7 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if (playerMove.equalsIgnoreCase("8"))
+		{
+			if (! Cell8.equalsIgnoreCase("8"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell8 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else if(playerMove.equalsIgnoreCase("9"))
+		{
+			if (! Cell9.equalsIgnoreCase("9"))
+				JOptionPane.showMessageDialog(null, "Spot already taken. Please try again");
+				else
+				{
+					Cell9 = "X";
+				invalidMove = false;
+				playerTurn = false;
+				compTurn = true;
+				}
+		}
+
+		else 
+		
+			JOptionPane.showMessageDialog(null, "Thats is not a valid input");
+			
+			}
+			
+			System.out.println(turn);
+			System.out.println(playerTurn + " p after player turn");
+			System.out.println(compTurn + " c after player turn");
+
+			}while(invalidMove == true);
+			turn++;
+			
+			sBoard = String.format(Cell1 + " | " + Cell2  + " | " + Cell3 + 
+			"\n---|---|---\n" + 
+			Cell4 + " | " + Cell5 + " | " + Cell6 + 
+			"\n---|---|---\n" + Cell7 + " | " + Cell8 + " | " + Cell9);
+			
+			if (Cell1.equalsIgnoreCase("x") && Cell2.equalsIgnoreCase("X") && Cell3.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+
+			else if (Cell1.equalsIgnoreCase("x") && Cell5.equalsIgnoreCase("X") && Cell9.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+			else if (Cell1.equalsIgnoreCase("x") && Cell4.equalsIgnoreCase("X") && Cell7.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+			else if (Cell2.equalsIgnoreCase("x") && Cell5.equalsIgnoreCase("X") && Cell8.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+
+			else if (Cell3.equalsIgnoreCase("x") && Cell5.equalsIgnoreCase("X") && Cell7.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+
+			else if (Cell3.equalsIgnoreCase("x") && Cell6.equalsIgnoreCase("X") && Cell9.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+
+			else if (Cell4.equalsIgnoreCase("x") && Cell5.equalsIgnoreCase("X") && Cell6.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+
+			else if (Cell7.equalsIgnoreCase("x") && Cell8.equalsIgnoreCase("X") && Cell9.equalsIgnoreCase("X"))
+			{	
+				JOptionPane.showMessageDialog(null,"PLAYER WINS!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+			else if (!Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1")
+					&& Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1"))
+			{	
+				JOptionPane.showMessageDialog(null,"ITS A TIE!!!\n " + sBoard);
+				bPlaying = false;
+				playerTurn = false;
+				compTurn = false;
+			}
+			
+			do{	
+				if(compTurn)
+					{
+			do{compMove = (int)((Math.random()*9+1));		
+
+			if (compMove == 1)
+			{
+				if (! Cell1.equals("1"))
+
+					compTurn = true;
+
+					else
+					{				
+						Cell1 = "O";
+						invalidMove = false;
+						playerTurn = true;
+						compTurn = false;
+					}
+
+			}
+
+			else if (compMove == 2)
+			{
+				if (! Cell2.equalsIgnoreCase("2"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell2 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 3)
+			{
+				if (! Cell3.equalsIgnoreCase("3"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell3 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 4)
+			{
+				if (! Cell4.equalsIgnoreCase("4"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell4 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 5)
+			{
+				if (! Cell5.equalsIgnoreCase("5"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell5 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 6)
+			{
+				if (! Cell6.equalsIgnoreCase("6"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell6 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 7)
+			{
+				if (! Cell7.equalsIgnoreCase("7"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell7 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 8)
+			{
+				if (! Cell8.equalsIgnoreCase("8"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell8 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+			}
+
+			else if (compMove == 9)
+			{
+				if (! Cell9.equalsIgnoreCase("9"))
+
+					compTurn = true;
+				
+					else
+					{
+						Cell9 = "O";
+					invalidMove = false;
+					playerTurn = true;
+					compTurn = false;
+					}
+
+			}
+
+			System.out.println(turn + " b4 comp");	
+
+			}while(compTurn == true);
+			
+
+			System.out.println(turn + " after comp");
+
+		}
+
+			}while(invalidMove == true);
+			turn++;
+			
+			sBoard = String.format(Cell1 + " | " + Cell2  + " | " + Cell3 + 
+			"\n---|---|---\n" + 
+			Cell4 + " | " + Cell5 + " | " + Cell6 + 
+			"\n---|---|---\n" + Cell7 + " | " + Cell8 + " | " + Cell9);
+			
+			if (turn >5)
+				{ 
+				if (Cell1.equalsIgnoreCase("O") && Cell2.equalsIgnoreCase("O") && Cell3.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell1.equalsIgnoreCase("O") && Cell5.equalsIgnoreCase("O") && Cell9.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell1.equalsIgnoreCase("O") && Cell4.equalsIgnoreCase("O") && Cell7.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell2.equalsIgnoreCase("O") && Cell5.equalsIgnoreCase("O") && Cell8.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell3.equalsIgnoreCase("O") && Cell5.equalsIgnoreCase("O") && Cell7.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell3.equalsIgnoreCase("O") && Cell6.equalsIgnoreCase("O") && Cell9.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell4.equalsIgnoreCase("O") && Cell5.equalsIgnoreCase("O") && Cell6.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if (Cell7.equalsIgnoreCase("O") && Cell8.equalsIgnoreCase("O") && Cell9.equalsIgnoreCase("O"))
+				{	
+					JOptionPane.showMessageDialog(null,"COMPUTER WINS!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				
+				else if
+				(!Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1")
+						&& Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1") && Cell1.equals("1"))
+				{	
+					JOptionPane.showMessageDialog(null,"ITS A TIE!!!\n " + sBoard);
+					bPlaying = false;
+					playerTurn = false;
+					compTurn = false;
+				}
+				}
+			
+		}while(bPlaying);
+
+		answer = JOptionPane.showInputDialog ("Would you like to try again? Y or N?");
+
+	}while(answer.equalsIgnoreCase("y"));
+
+	}
+
+}
